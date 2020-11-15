@@ -1,0 +1,44 @@
+public function employe_monthWise_attendance_Report($startDate)
+  {
+     $date = new DateTime($startDate);
+   $start_date=$date->modify('first day of this month')->format('Y-m-d');
+   $end_date=$date->modify('last day of this month')->format('Y-m-d');
+   
+   $query="SELECT fetch_at.emp_id , emp.first_name,emp.last_name ,emp.photo, fetch_at.Presents,fetch_at.Absents,fetch_at.CasualLeave,fetch_at.MeetingLate,fetch_at.SickLeave,fetch_at.Late,fetch_at.HalfDay,fetch_at.Total_Attendance_Days,fetch_at.Total_working_Days FROM 
+employee as emp
+INNER JOIN (
+select 
+emp_id, count(distinct at_date) as Total_Attendance_Days, 
+    sum(case when status= 'p' then 1 else 0 end) Presents,
+    sum(case when status = 'a' then 1 else 0 end) Absents, 
+    sum(case when status = 'cl' then 1 else 0 end) CasualLeave, 
+    sum(case when status = 'ml' then 1 else 0 end) MeetingLate,
+     sum(case when status = 'l' then 1 else 0 end) Late,
+     sum(case when status = 'hd' then 1 else 0 end) HalfDay,
+     sum(case when status = 'sl' then 1 else 0 end) SickLeave,
+
+    FORMAT( ( (sum(case when status = 'hd' then 1 else 0 end)/2) +
+    (sum(case when status = 'l' then 1 else 0 end))+
+    (sum(case when status = 'ml' then 1 else 0 end))+
+     ( sum(case when status= 'p' then 1 else 0 end) ) ),1)
+     Total_working_Days
+
+  from emp_attendance tea
+   WHERE tea.at_date >= '$start_date' + INTERVAL 0 MONTH AND tea.at_date < '$start_date' + INTERVAL 1 MONTH
+    
+    group by emp_id 
+)  as fetch_at
+
+ON fetch_at.emp_id= emp.emp_id
+ WHERE emp.status='1'";
+$results=$this->db->select($query);
+    if ($results) {
+     return $results;
+    }
+    else {
+      echo "Data Not Available";
+    }
+
+
+
+   }

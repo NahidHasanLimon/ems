@@ -1,0 +1,44 @@
+$('#selectEmployee').on('change',function(){
+           
+         
+
+       
+        if(selectedEmployeeID){
+            $.ajax({
+                type:'POST',
+                url:'controller/employee/end_role_employee.php',
+                data:'selectedEmployeeID='+selectedEmployeeID,
+                // dataType:"json",
+                success:function(data){
+               
+                 
+                   // $("#AssignedJobDetailsDiv").show();
+                   
+                   //  var i=0;
+                   //Through loop
+                   //    $.each(data, function (i, empdetail) {
+                   //      if (i<=0) {
+                   //         $('#thumb-output').append( '<img src= "controller/employee/' +empdetail.photo + '">');
+                   //      }
+                       
+                        // console.log(empdetail.photo);
+                        // $('#listOfEmployee').append("<tr><td>" + empdetail.emp_id + "</td><td>" + empdetail.first_name + "</td><td>" + "<span class='abc'></span>" + "</td></tr>");
+
+ 
+          // $('#assignedJobTableBody').append("<tr id= "+ empdetail.emp_id +"><td>"+ empdetail.des_name + "</td><td>"+empdetail.dep_name+ "</td><td>"+empdetail.comp_name+"</td><td>"+empdetail.salary+"</td><td>"+empdetail.start_date+"</td><td><button type='button' name='view_jobRole'value='End Role'class='btn btn-danger btn-lg view_jobRole' id ="+empdetail.id+"/></button></td> </tr>" );
+          //Through loop
+                        // $('.abc').html(dropdown);
+
+
+                        //$("#Emp_Official_Id").val(empdetail.Employee_Official_Id);                            
+
+                    // });
+                   
+                    // End if
+                   
+                    
+                }
+            }); 
+        }
+    });
+"http://nhlimon.com/7teen/ems/"

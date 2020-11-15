@@ -1,0 +1,13 @@
+SELECT *
+FROM (
+ 
+SELECT emp.first_name,emp.photo,ejr.des_id,ejr.start_date,ejr.dep_id,ejr.comp_id
+FROM  emp_job_role ejr 
+INNER JOIN employee emp
+ON ejr.emp_id= emp.emp_id
+WHERE ejr.emp_id=39 AND
+ejr.end_date IS NULL
+    ) r
+  INNER JOIN designation des ON des.des_id =  r.des_id
+  INNER JOIN company comp ON comp.comp_id =  r.comp_id
+  INNER JOIN department dep ON dep.dep_id =  r.dep_id

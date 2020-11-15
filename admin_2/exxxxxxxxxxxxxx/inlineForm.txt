@@ -1,0 +1,1 @@
+<form action="v_edit_employee.php" method="post"><a href="index.php?emp_id= type="button" name="View" id="' . $row["emp_id"] . '" class="btn btn-primary btn-xs editEmployeesData" role="button">Edit</a></form>

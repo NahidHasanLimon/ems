@@ -1,0 +1,144 @@
+
+SELECT emp_id,
+  GROUP_CONCAT(if(DAY(`at_date`) = 1, `status`, NULL)) AS 'day1',
+  GROUP_CONCAT(if(DAY(`at_date`) = 2, `status`, NULL)) AS 'day2',
+  GROUP_CONCAT(if(DAY(`at_date`) = 3, `status`, NULL)) AS 'day3', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 4, `status`, NULL)) AS 'day4', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 5, `status`, NULL)) AS 'day5', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 6, `status`, NULL)) AS 'day6', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 7, `status`, NULL)) AS 'day7', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 8, `status`, NULL)) AS 'day8', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 9, `status`, NULL)) AS 'day9', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 10, `status`, NULL)) AS 'day10',
+  GROUP_CONCAT(if(DAY(`at_date`) = 11, `status`, NULL)) AS 'day11', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 12, `status`, NULL)) AS 'day12', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 13, `status`, NULL)) AS 'day13', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 14, `status`, NULL)) AS 'day14', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 15, `status`, NULL)) AS 'day15', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 16, `status`, NULL)) AS 'day16', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 17, `status`, NULL)) AS 'day17', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 18, `status`, NULL)) AS 'day18', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 19, `status`, NULL)) AS 'day19', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 20, `status`, NULL)) AS 'day20', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 21, `status`, NULL)) AS 'day21', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 22, `status`, NULL)) AS 'day22', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 23, `status`, NULL)) AS 'day23', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 24, `status`, NULL)) AS 'day24', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 25, `status`, NULL)) AS 'day25', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 26, `status`, NULL)) AS 'day26', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 27, `status`, NULL)) AS 'day27', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 28, `status`, NULL)) AS 'day28', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 29, `status`, NULL)) AS 'day29', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 30, `status`, NULL)) AS 'day30',  
+  GROUP_CONCAT(if(DAY(`at_date`) = 31, `status`, NULL)) AS 'day31', 
+  COUNT(if(`status`='P', `status`, NULL)) AS 'totalP'
+FROM `emp_attendance`
+WHERE  `at_date` BETWEEN '2019-07-01' AND '2019-07-31'
+GROUP BY emp_id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT *
+FROM (
+SELECT emp_id,
+  GROUP_CONCAT(if(DAY(`at_date`) = 1, `status`, NULL)) AS 'day1',
+  GROUP_CONCAT(if(DAY(`at_date`) = 2, `status`, NULL)) AS 'day2',
+  GROUP_CONCAT(if(DAY(`at_date`) = 3, `status`, NULL)) AS 'day3', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 4, `status`, NULL)) AS 'day4', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 5, `status`, NULL)) AS 'day5', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 6, `status`, NULL)) AS 'day6', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 7, `status`, NULL)) AS 'day7', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 8, `status`, NULL)) AS 'day8', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 9, `status`, NULL)) AS 'day9', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 10, `status`, NULL)) AS 'day10',
+  GROUP_CONCAT(if(DAY(`at_date`) = 11, `status`, NULL)) AS 'day11', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 12, `status`, NULL)) AS 'day12', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 13, `status`, NULL)) AS 'day13', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 14, `status`, NULL)) AS 'day14', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 15, `status`, NULL)) AS 'day15', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 16, `status`, NULL)) AS 'day16', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 17, `status`, NULL)) AS 'day17', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 18, `status`, NULL)) AS 'day18', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 19, `status`, NULL)) AS 'day19', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 20, `status`, NULL)) AS 'day20', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 21, `status`, NULL)) AS 'day21', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 22, `status`, NULL)) AS 'day22', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 23, `status`, NULL)) AS 'day23', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 24, `status`, NULL)) AS 'day24', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 25, `status`, NULL)) AS 'day25', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 26, `status`, NULL)) AS 'day26', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 27, `status`, NULL)) AS 'day27', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 28, `status`, NULL)) AS 'day28', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 29, `status`, NULL)) AS 'day29', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 30, `status`, NULL)) AS 'day30',  
+  GROUP_CONCAT(if(DAY(`at_date`) = 31, `status`, NULL)) AS 'day31', 
+  COUNT(if(`status`='P', `status`, NULL)) AS 'totalP'
+FROM `emp_attendance`
+WHERE  `at_date` BETWEEN '2019-07-01' AND '2019-07-31'
+GROUP BY emp_id
+    ) result 
+    INNER JOIN employee ON employee.emp_id= result.emp_id
+
+
+
+
+
+
+
+
+
+
+    SELECT result.*,emp.first_name,emp.last_name,emp.photo
+FROM
+(
+SELECT emp_id,
+  GROUP_CONCAT(if(DAY(`at_date`) = 1, `status`, NULL)) AS 'day1',
+  GROUP_CONCAT(if(DAY(`at_date`) = 2, `status`, NULL)) AS 'day2',
+  GROUP_CONCAT(if(DAY(`at_date`) = 3, `status`, NULL)) AS 'day3', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 4, `status`, NULL)) AS 'day4', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 5, `status`, NULL)) AS 'day5', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 6, `status`, NULL)) AS 'day6', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 7, `status`, NULL)) AS 'day7', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 8, `status`, NULL)) AS 'day8', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 9, `status`, NULL)) AS 'day9', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 10, `status`, NULL)) AS 'day10',
+  GROUP_CONCAT(if(DAY(`at_date`) = 11, `status`, NULL)) AS 'day11', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 12, `status`, NULL)) AS 'day12', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 13, `status`, NULL)) AS 'day13', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 14, `status`, NULL)) AS 'day14', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 15, `status`, NULL)) AS 'day15', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 16, `status`, NULL)) AS 'day16', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 17, `status`, NULL)) AS 'day17', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 18, `status`, NULL)) AS 'day18', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 19, `status`, NULL)) AS 'day19', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 20, `status`, NULL)) AS 'day20', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 21, `status`, NULL)) AS 'day21', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 22, `status`, NULL)) AS 'day22', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 23, `status`, NULL)) AS 'day23', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 24, `status`, NULL)) AS 'day24', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 25, `status`, NULL)) AS 'day25', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 26, `status`, NULL)) AS 'day26', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 27, `status`, NULL)) AS 'day27', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 28, `status`, NULL)) AS 'day28', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 29, `status`, NULL)) AS 'day29', 
+  GROUP_CONCAT(if(DAY(`at_date`) = 30, `status`, NULL)) AS 'day30',  
+  GROUP_CONCAT(if(DAY(`at_date`) = 31, `status`, NULL)) AS 'day31', 
+  COUNT(if(`status`='P', `status`, NULL)) AS 'totalP'
+FROM `emp_attendance`
+
+WHERE  `at_date` BETWEEN '2019-07-01' AND '2019-07-31'
+GROUP BY emp_id) result 
+LEFT JOIN employee as emp ON result.emp_id=emp.emp_id

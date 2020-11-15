@@ -1,0 +1,35 @@
+select emp_id, count(distinct date) as Total_Attendance_Days, 
+sum(case when status= 'p' then 1 else 0 end) Presents, 
+sum(case when status = 'a' then 1 else 0 end) Absents, 
+sum(case when status = 'cl' then 1 else 0 end) CasualLeave,
+sum(case when status = 'ml' then 1 else 0 end) MeetingLeave 
+from emp_attendance where at_date between '2019-07-01' and '2019-07-13' 
+group by emp_id
+
+
+Attendance with Given Range
+
+SELECT emp.first_name,emp.last_name ,emp.photo, fetch_at.Presents,fetch_at.Presents,fetch_at.Presents,fetch_at.Absents,fetch_at.CasualLeave,fetch_at.MeetingLate,fetch_at.OthersLeave,fetch_at.Total_Attendance_Days FROM 
+employee as emp
+INNER JOIN (
+select 
+emp_id, count(distinct at_date) as Total_Attendance_Days, 
+    sum(case when status= 'p' then 1 else 0 end) Presents,
+    sum(case when status = 'a' then 1 else 0 end) Absents, 
+    sum(case when status = 'cl' then 1 else 0 end) CasualLeave, 
+    sum(case when status = 'ml' then 1 else 0 end) MeetingLate,
+     sum(case when status = 'ol' then 1 else 0 end) OthersLeave
+    from temp_emp_attendance where at_date between '2019-07-01' and '2019-07-13' group by emp_id )  as fetch_at
+
+ON fetch_at.emp_id= emp.emp_id
+///
+
+	$date = new DateTime($startDate);
+     $start_date=$date->modify('first day of this month')->format('Y-m-d');
+     $end_date=$date->modify('last day of this month')->format('Y-m-d');
+
+
+
+WHERE adv.advanced_date >= '$start_date' + INTERVAL 0 MONTH AND adv.advanced_date < '$start_date' + INTERVAL 1 MONTH
+
+https://stackoverflow.com/questions/12309289/mysql-select-last-month-data-by-current-timestamp

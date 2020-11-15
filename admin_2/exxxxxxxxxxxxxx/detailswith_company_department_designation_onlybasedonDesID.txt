@@ -1,0 +1,32 @@
+SELECT r2.*,com.comp_name
+FROM (
+SELECT r1.*,dep.dep_name,dep.comp_id
+FROM (
+SELECT ejr.id as jobRoleID,ejr.emp_id,ejr.job_nature,ejr.start_date,ejr.end_date,ejr.salary,ejr.notes,ejr.des_id,des.des_name,des.dep_id
+FROM `emp_job_role`  ejr
+INNER JOIN designation des ON des.des_id=ejr.des_id
+    ) r1
+ INNER JOIN department dep ON r1.dep_id = dep.dep_id
+    ) r2
+    INNER JOIN company com ON r2.comp_id= com.comp_id
+
+
+
+
+
+
+
+
+
+SELECT r2.*,com.comp_name,emp.*
+FROM (
+SELECT r1.*,dep.dep_name,dep.comp_id
+FROM (
+SELECT ejr.id as jobRoleID,ejr.emp_id,ejr.job_nature,ejr.start_date,ejr.end_date,ejr.salary,ejr.notes,ejr.des_id,des.des_name,des.dep_id
+FROM `emp_job_role`  ejr
+INNER JOIN designation des ON des.des_id=ejr.des_id
+    ) r1
+ INNER JOIN department dep ON r1.dep_id = dep.dep_id
+    ) r2
+    INNER JOIN company com ON r2.comp_id= com.comp_id
+    LEFT JOIN employee emp ON emp.emp_id= r2.emp_id

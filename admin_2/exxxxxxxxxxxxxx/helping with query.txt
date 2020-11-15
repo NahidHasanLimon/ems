@@ -1,0 +1,24 @@
+find employye job role ad details fetch
+
+
+SELECT * FROM employee as emp INNER JOIN emp_job_role as ejr ON emp.emp_id= ejr.emp_id
+LEFT JOIN designation as des ON des.des_id=ejr.des_id 
+LEFT JOIN department as dep ON dep.dep_id=des.dep_id
+LEFT JOIN company as comp ON dep.comp_id=comp.comp_id
+
+or
+
+SELECT * FROM employee as emp
+LEFT JOIN emp_job_role as ejr ON emp.emp_id= ejr.emp_id
+LEFT JOIN designation as des ON des.des_id=ejr.des_id 
+LEFT JOIN department as dep ON dep.dep_id=des.dep_id
+LEFT JOIN company as comp ON dep.comp_id=comp.comp_id
+
+or by distinct
+
+SELECT DISTINCT emp.emp_id,emp.first_name,emp.last_name
+FROM employee as emp
+LEFT JOIN emp_job_role as ejr ON emp.emp_id= ejr.emp_id
+LEFT JOIN designation as des ON des.des_id=ejr.des_id 
+LEFT JOIN department as dep ON dep.dep_id=des.dep_id
+LEFT JOIN company as comp ON dep.comp_id=comp.comp_id

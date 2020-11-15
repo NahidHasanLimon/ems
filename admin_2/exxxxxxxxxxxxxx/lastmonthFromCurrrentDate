@@ -1,0 +1,14 @@
+SELECT emp.first_name,emp.last_name ,emp.photo, fetch_at.Presents,fetch_at.Absents,fetch_at.CasualLeave,fetch_at.MeetingLate,fetch_at.OthersLeave,fetch_at.Total_Attendance_Days FROM 
+employee as emp
+INNER JOIN (
+select 
+emp_id, count(distinct at_date) as Total_Attendance_Days, 
+    sum(case when status= 'p' then 1 else 0 end) Presents,
+    sum(case when status = 'a' then 1 else 0 end) Absents, 
+    sum(case when status = 'cl' then 1 else 0 end) CasualLeave, 
+    sum(case when status = 'ml' then 1 else 0 end) MeetingLate,
+     sum(case when status = 'ol' then 1 else 0 end) OthersLeave
+  from temp_emp_attendance where at_date BETWEEN SUBDATE(CURDATE(), INTERVAL 1 MONTH) AND NOW()
+    group by emp_id )  as fetch_at
+
+ON fetch_at.emp_id= emp.emp_id

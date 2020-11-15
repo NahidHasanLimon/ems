@@ -1,0 +1,33 @@
+$('.statusTypeSelect').change(function() {
+   // $(this).closest('tr').find('.clientAmt').val($('option:selected', this).data('price'));
+    var SValue = $(this).val();
+    // alert(myValue);
+   if (SValue=='a' || SValue=='sl' || SValue=='cl'||SValue=='a' ||SValue=='a' || SValue=='a'||SValue=='a') {
+      // $(this).closest('tr').find('.chekcClass').val('00:00:00');
+      // $(this).closest('tr').find('.Input_timepicker_In').val(null);
+
+      // $(this).closest('tr').find('.Input_timepicker_In').attr('disabled','disabled');
+      // $(this).closest('tr').find('.Input_timepicker_Out').attr('disabled','disabled');
+      $(this).closest('tr').find('.Input_timepicker_In').val('');
+      $(this).closest('tr').find('.Input_timepicker_Out').val('');
+      
+      $(this).closest('tr').find('.Input_timepicker_In').prop('readonly',true);
+      $(this).closest('tr').find('.Input_timepicker_Out').prop('readonly',true);
+       $(this).closest('tr').find('.Input_timepicker_In').prop('required',false);
+       $(this).closest('tr').find('.Input_timepicker_Out').prop('required',false);
+      
+      // $(this).closest('tr').find('.Input_timepicker_Out').attr('disabled','disabled');
+
+   }
+   else {
+     // $(this).closest('tr').find('.Input_timepicker_In').removeAttr('disabled');
+     // $(this).closest('tr').find('.Input_timepicker_Out').removeAttr('disabled');
+      $(this).closest('tr').find('.Input_timepicker_In').prop('required',true);
+       $(this).closest('tr').find('.Input_timepicker_Out').prop('required',true);
+
+     $(this).closest('tr').find('.Input_timepicker_In').prop('readonly',false);
+      $(this).closest('tr').find('.Input_timepicker_Out').prop('readonly',false);
+
+   }
+  
+});

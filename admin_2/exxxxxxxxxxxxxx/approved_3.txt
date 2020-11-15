@@ -1,0 +1,1 @@
+SELECT tea.at_date,emp.emp_id,emp.first_name,emp.last_name,emp.photo,tea.emp_id,tea.c_in,tea.c_out,emp.emp_id FROM temp_emp_attendance as tea INNER JOIN employee as emp ON emp.emp_id=tea.emp_id WHERE at_date = '2019-07-05' and approved_3=0

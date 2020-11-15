@@ -1,0 +1,1 @@
+SELECT a.emp_id, a.last_name, GROUP_CONCAT(b.id ORDER BY b.id) AS jobRoleID FROM employee a INNER JOIN emp_job_role b ON a.emp_id = b.emp_id GROUP BY a.emp_id, a.last_name

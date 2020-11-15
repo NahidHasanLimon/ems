@@ -1,0 +1,159 @@
+ .thumb{
+  margin: 10px 5px 0 0;
+  width: 200px;
+}
+.error_email{
+  color: red;
+}
+.error_response{
+	color: red;
+	font-weight: bold;
+	font-weight: 200px; 
+}
+.success_response{
+	color: green;
+	font-weight: bold;
+	font-weight: 200px;
+}
+.image-preview_div{
+font-size: 30px;
+top: 100px;
+left: 100px;
+width: 200px;
+height: 200px;
+text-align: center;
+line-height: 180px;
+font-weight: bold;
+color: #C0C0C0;
+background-color: #FFFFFF;
+overflow: auto;
+}
+@media (min-width: 768px) {
+    .image-preview_div {
+        position: abosulte;
+    }
+}
+/*.fit{
+  width:100%;
+  height:auto;
+}*/
+.messageShowingDiv {
+  position: relative;
+  width: 600px;
+  height: 20px;
+  left: 50%;
+  top: 0%;
+  margin-left: -300px; /*half the width*/
+}
+.image-preview_div img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.customPicker .ui-datepicker-calendar {
+
+    display: none !important;
+
+}​
+.reportTD{
+   text-align: center;
+    font-size: 150%;
+}
+
+
+#jobDetailsTable.td,th{
+  padding: 0.5em;
+  padding-right: 0.5em;
+}
+  .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../../gif/Preloader_3.gif') 50% 50% no-repeat rgb(249,249,249);
+    /*background: url('gif/giphy.gif') 50% 50% no-repeat rgb(249,249,249);*/
+    opacity: .8;
+}
+.main--content{
+  background-color:#3d3d3d !important;
+}
+.page--header{
+  background-color:#2C3034; !important;
+}
+.page--title{
+  text-align: center;
+}
+/*One Way*/
+/*over ride row color and align for striped table*/
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #2C3034; 
+   vertical-align: middle !important;
+
+  
+ }
+
+ .table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #212529; 
+   vertical-align: middle !important;
+ }
+ /*over ride row color and align for striped table*/
+
+ 
+
+
+
+ /*all for datatable*/
+ .dataTables_length
+ {
+  color: #ffffff !important;
+ }
+.dataTables_info
+ {
+  color: #ffffff !important;
+ }
+  .dataTables_wrapper .dataTables_paginate .paginate_button
+ {
+  color: #ffffff !important;
+ }
+ /*all for datatable*/
+
+
+/*for my custom table*/
+
+.myCustomTable>tbody{
+  /*color: #cccccc !important;*/
+  font-weight: bold;
+}
+.myCustomTable>thead{
+  overflow-y: auto;
+  color: #cccccc !important;
+  /*font-weight: bold;*/
+}
+
+/*for my custom table*/
+/*override thead align middle for all*/
+/*i just comment out it for datepicker*/
+/*table thead th{
+  vertical-align: middle !important;
+  min-width: 100px;
+ }*/
+
+ /*override thead align middle for all*/
+
+/*input background and foreground and text color*/
+.form-control{
+  border-radius: 0; 
+  background-color:#2C3034 ;
+  color: white ;
+}
+.control-label{
+  color: white ;
+ }
+.filter-panel{
+  background-color: #2C3034;
+}
+/*input background and foreground and text color*/

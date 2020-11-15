@@ -1,0 +1,18 @@
+
+<?php
+echo sweetAlert("Atenção!", "As senhas digitadas não conferem.", "warning");
+?>
+Example 2 :
+
+<?php
+ 
+echo '<script type="text/javascript">';
+ 
+echo 'setTimeout(function () { swal("WOW!","Message!","success");';
+ 
+echo '}, 1000);</script>';
+ 
+?>
+
+
+ $this->assign("alert", sweetAlert("温馨提示", "注册失败，请稍候再试！", "warning"));
